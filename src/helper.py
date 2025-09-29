@@ -16,6 +16,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)  # create open AI client
 apify_client = ApifyClient(os.getenv("APIFY_API_KEY"))  # create apify client
 
 
+
 # extract data from pdf
 def extract_text_from_pdf(uploaded_file):
     """
@@ -94,6 +95,24 @@ def fetch_linkedin_jobs(search_query, location="sri lanka", rows=60):
 
 # search for nakuri jobs
 def fetch_nakuri_jobs(search_query, location="sri lanka", rows=60):  # rows = maximum job units
-    pass
+    run_input = {
+        "keyword": search_query,
+        "maxJobs": 60,
+        "freshness": "all",
+        "sortBy": "relevance",
+        "experience": "all",
+        # "location": location,
+        # "rows": rows,
+        # "title": search_query,
+        # "proxy": {
+        #     "useApifyProxy": True,
+        #     "apifyProxyGroups": ["RESIDENTIAL"],
+        # } 
+    }
+    
+    # do not forget to pass the actor id from that sdk code
+    run = apify_client.actor("wsrn5gy5C4EDeYCcD").call(run_input=run_input)
 
+    jobs = list(apify_client.dataset(run["defaultDatasetId"]).iterate_items())
+    return jobs
 
