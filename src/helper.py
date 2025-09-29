@@ -54,3 +54,14 @@ def ask_openai(prompt, max_tokens=150):
 
     return response.choices[0].message.content
 
+
+# search for linkedin jobs
+def fetch_linkedin_jobs(search_query, location="sri lanka", rows=60):
+    pass
+
+
+# search for nakuri jobs
+def fetch_nakuri_jobs(search_query, location="sri lanka", rows=60):  # rows = maximum job units
+    pass
+
+
