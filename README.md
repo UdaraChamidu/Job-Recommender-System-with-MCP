@@ -9,3 +9,5 @@
 
 ## Naukri Jobs Scraper (for nakuri jobs)
 - do the same things as above
+
+### one token is enough for all apify tools.
