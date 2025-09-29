@@ -1,0 +1,6 @@
+streamlit
+openai
+pymupdf # process pdf files
+python-dotenv
+apify-client # python sdk for apify
+
