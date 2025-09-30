@@ -1,6 +1,6 @@
 import streamlit as  st  
 from src.helper import extract_text_from_pdf, ask_openai
-
+from src.job_api import fetch_linkedin_jobs, fetch_nakuri_jobs
 
 # set the configuration
 st.set_page_config(
@@ -42,5 +42,15 @@ if uploaded_file is not None:
     st.success("Analysis complete Successfully !")
     
     
-    
-    
+    # fetch jobs
+    if st.button("Set Job Recommendations"):
+        with st.spinner("Finding Job Recommendations..."):
+            keywords = ask_openai(f"Extract keywords, best job titles from the following resume. Give a comma separated list. no explain needed:\n\n{summary}", max_tokens=100)
+            
+            search_keywords_clean = keywords.replace("\n", "").strip()
+            
+        st.success(f"Extracted Job keywords: {search_keywords_clean}")
+
+        with st.spinner("Finding Jobs ..."):
+            linkedin_jobs = fetch_linkedin_jobs(search_keywords_clean, rows=60)
+            nakuri_jobs = fetch_nakuri_jobs(search_keywords_clean, rows=60)           
