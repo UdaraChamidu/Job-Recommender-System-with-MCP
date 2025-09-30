@@ -13,3 +13,8 @@
 - do the same things as above
 
 ### one token is enough for all apify tools. also try to find free clients
+
+# MCP part
+
+- uv add "mcp[cli]"
+- mcp dev mcp_server.py

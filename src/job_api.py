@@ -40,10 +40,6 @@ def fetch_linkedin_jobs(search_query, location="sri lanka", rows=60):
     return jobs
 
 
-
-
-
-
 # search for nakuri jobs
 def fetch_nakuri_jobs(search_query, location="sri lanka", rows=60):  # rows = maximum job units
     run_input = {

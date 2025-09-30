@@ -17,3 +17,4 @@ async def fetch_nakuri_jobs_tool(listofkey):
 if __name__ == "__main__":
     mcp.run(transport="stdio")  # You can also use "http" for HTTP transport
     
+    
