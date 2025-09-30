@@ -34,7 +34,7 @@ def fetch_linkedin_jobs(search_query, location="sri lanka", rows=60):
     }
 
     # Run the Actor and wait for it to finish
-    run = apify_client.actor("S3pG45Tw0hoBEnVDu").call(run_input=run_input)
+    run = apify_client.actor("RIGGeqD6RqKmlVoQU").call(run_input=run_input)
 
     jobs = list(apify_client.dataset(run["defaultDatasetId"]).iterate_items())
     return jobs
@@ -62,7 +62,7 @@ def fetch_nakuri_jobs(search_query, location="sri lanka", rows=60):  # rows = ma
     }
     
     # do not forget to pass the actor id from that sdk code
-    run = apify_client.actor("wsrn5gy5C4EDeYCcD").call(run_input=run_input)
+    run = apify_client.actor("alpcnRV9YI9lYVPWk").call(run_input=run_input)
 
     jobs = list(apify_client.dataset(run["defaultDatasetId"]).iterate_items())
     return jobs
