@@ -29,15 +29,15 @@ if uploaded_file is not None:
     # Display in a nice format
     st.markdown("---")
     st.header("Resume Summary")
-    st.markdown(f"<div style='background-color:#f0f0f0; padding:10px; border-radius:5px;'>{summary}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='background-color:#f0f0f0; padding:10px; border-radius:5px; color:black;'>{summary}</div>", unsafe_allow_html=True)
     
     st.markdown("---")
     st.header("Skill Gaps Analysis")
-    st.markdown(f"<div style='background-color:#f0f0f0; padding:10px; border-radius:5px;'>{gaps}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='background-color:#f0f0f0; padding:10px; border-radius:5px; color:black;'>{gaps}</div>", unsafe_allow_html=True)
 
     st.markdown("---")
     st.header("Future Career Roadmap")
-    st.markdown(f"<div style='background-color:#f0f0f0; padding:10px; border-radius:5px;'>{roadmap}</div>", unsafe_allow_html=True)          
+    st.markdown(f"<div style='background-color:#f0f0f0; padding:10px; border-radius:5px; color:black;'>{roadmap}</div>", unsafe_allow_html=True)
     
     st.success("Analysis complete Successfully !")
     
